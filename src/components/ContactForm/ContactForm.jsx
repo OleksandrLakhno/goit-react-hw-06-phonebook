@@ -9,11 +9,11 @@ const validateValue = {
     message:
       "Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan",
   },
-  number: {
-    pattern: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
-    message:
-      'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
-  },
+  // number: {
+  //   pattern: /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/,
+  //   message:
+  //     'Phone number must be digits and can contain spaces, dashes, parentheses and can start with +',
+  // },
 };
 
 const initialValue = {
@@ -28,12 +28,12 @@ const schema = yup.object().shape({
       message: validateValue.name.message,
     })
     .required(),
-  number: yup
-    .string()
-    .matches(validateValue.number.pattern, {
-      message: validateValue.number.message,
-    })
-    .required(),
+  // number: yup
+  //   .string()
+  //   .matches(validateValue.number.pattern, {
+  //     message: validateValue.number.message,
+  //   })
+  //   .required(),
 });
 
 export const ContactForm = () => {
